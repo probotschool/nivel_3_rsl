@@ -1,17 +1,17 @@
-int PWMpinI=5;  
+int PWMpinI=11;  
 int PWMpinD=6;  
-int MI1=9;      
-int MI2=10;     
-int MD1=7;      
-int MD2=8;      
-int SI3=A5;
-int SI2=A4;
-int SI1=A3;
-int SD1=A2;
-int SD2=A1;
-int SD3=A0;
-int interrup = 0;
-int c=0;
+int MI1=13;      
+int MI2=12;     
+int MD1=10;      
+int MD2=9;      
+int SI3=A0;
+int SI2=A1;
+int SI1=A2;
+int SD1=A3;
+int SD2=A4;
+int SD3=A5;
+int interrup = 5;
+int c=5;
 int CANT_LEC = 6;
 int CENTRO = 2500;
 float last_proportional;
@@ -56,7 +56,7 @@ void loop(){
   //  Serial.println(maxVel);
   //delay(1000);
    proportional = readLine();
-   //Serial.println(proportional);
+   Serial.println(proportional);
    //delay(1000);
    derivative = proportional - last_proportional;
    last_proportional = proportional;
@@ -178,4 +178,3 @@ void interrupcion()
    interrup = interrup + 1;
    delay(50);
     }
-
